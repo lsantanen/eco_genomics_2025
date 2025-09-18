@@ -53,3 +53,11 @@ myscripts folder. We used this to trim the adapters out of our red spruce fastq 
 -   Because these latter two scripts can run after the initial mapping completes, we wrote a wrapper script to execute both `process_bam.sh` and `bam_stats.sh` and submit to SLURM
 
 -   All scripts are located in `~projects/eco_genomics_2025/population_genomics/myscripts`
+
+### 09/18/25: Review bamstats and set up nucleotide diversity estimation using ANGSD
+
+-   Wrote a short script called `bamstats_review.r` located in myscripts to evaluate the mapping success
+
+    -   Saw roughly 66% of reads mapped in proper pairs
+
+    -   Obtained depth of coverage between 2-3X -\> suggests we need to use a probabilistic framework for the genotype data

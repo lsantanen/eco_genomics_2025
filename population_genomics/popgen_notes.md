@@ -61,3 +61,9 @@ myscripts folder. We used this to trim the adapters out of our red spruce fastq 
     -   Saw roughly 66% of reads mapped in proper pairs
 
     -   Obtained depth of coverage between 2-3X -\> suggests we need to use a probabilistic framework for the genotype data
+
+-   We created a file under `myscripts` called `ANGSD.sh` to estimate the genotype likelihoods
+
+-   We created a file under `myscripts` called `ANGSD_doTheta` to estimate the SFS and nucleotide diversity stats for our population (2103)
+
+-   The two above files were combined into a wrapper to send to SLURM customized with 10cpus and 64G RAM

@@ -67,3 +67,31 @@ myscripts folder. We used this to trim the adapters out of our red spruce fastq 
 -   We created a file under `myscripts` called `ANGSD_doTheta` to estimate the SFS and nucleotide diversity stats for our population (2103)
 
 -   The two above files were combined into a wrapper to send to SLURM customized with 10cpus and 64G RAM
+
+-   All scripts are located in `~projects/eco_genomics_2025/population_genomics/myscripts`
+
+### 09/23/25: Visualizing genomic diversity and intro to population structure
+
+-   Fixed the failure with the scripts from last week, executed the "cut" command given at the end of the fourth tutorial `cut -f2-5,9,14 ${OUT}/${MYPOP}_${SUFFIX}_win${WIN}_step${STEP}.thetasWindow.gz.pestPG > ${OUT}/${MYPOP}_${SUFFIX}_win${WIN}_step${STEP}.thetas`
+
+-   Outputs can be viewed in `~projects/eco_genomics_2025/population_genomics/myresults/ANGSD/diversity`
+
+-   The correct output file is called `2103_ALL_win50000_step50000.thetas`
+
+-   We created an R markdown file to display the nucleotide diversity
+
+    -   We loaded two libraries, ggplot and tidyverse, then read in our theta outputs using read.table
+
+    -   Then, we scaled our thetas using nSites
+
+    -   Plotted a histogram of how many sites are in the window that got sequenced
+
+    -   Plotted the points of nucleotide diversity as pi
+
+-   Data from each population was put into a shared spreadsheet to compare different average values
+
+-   The R markdown file is saved in `mydocs` and the shared spreadsheet is located in the classroom tutorial website
+
+<!-- -->
+
+-   All files are located in `~projects/eco_genomics_2025/population_genomics`

@@ -92,6 +92,22 @@ myscripts folder. We used this to trim the adapters out of our red spruce fastq 
 
 -   The R markdown file is saved in `mydocs` and the shared spreadsheet is located in the classroom tutorial website
 
-<!-- -->
-
 -   All files are located in `~projects/eco_genomics_2025/population_genomics`
+
+### 09/25/25: Visualizing genomic diversity and intro to population structure
+
+-   Knitted the R markdown file we created last time
+    -   To edit in the future, open in a web browser
+-   Created an bash script to use ANGSD to estimate Fst between our pops (2103) and the black spruce pop
+-   The script is called `ANGSD_Fst.sh` and is located in `myscripts`
+-   Included a sliding window analysis using a win size of 50kb and step of 50kb
+-   The results for `ANGSD_Fst.sh` are located in `myresults/ANGSD/Fst`
+    -   There is one file showing the results with the windows (`2103_WISC_Fst_50kbWindows.txt`) and one file showing the overall results using all the data (`2103_WISC_Fst.txt`)
+    -   The Fst value we added to the shared spreadsheet is the second number in the `2103_WISC_Fst.txt` file
+    -   Higher pi values show higher genetic diversity between the red and black spruce
+-   While the `ANGSD_Fst.sh script` was running, we created another script called `PCAngsd_RSBS.sh` to run a PCA analysis assuming the data fits a single eigenvalue
+    -   The outputs are saved in `/myresults/ANGSD/PCA_ADMIX`
+-   We created an R markdown file called PCA_Admixture.Rmd
+    -   We used K=2 to represent the red spruce and the black spruce populations
+    -   We created a bar plot and a scatter plot for PCA as well as a heat map to show the admixture between the red and black spruce populations
+-   `PCA_Admixture.Rmd` was knitted and saved into `mydocs`

@@ -98,7 +98,7 @@ myscripts folder. We used this to trim the adapters out of our red spruce fastq 
 
 -   Knitted the R markdown file we created last time
     -   To edit in the future, open in a web browser
--   Created an bash script to use ANGSD to estimate Fst between our pops (2103) and the black spruce pop
+-   Created an bash script to use ANGSD to estimate Fst between our pops (2103) and the black spruce pop (95 red spruce samples and 18 black spruce samples in total)
 -   The script is called `ANGSD_Fst.sh` and is located in `myscripts`
 -   Included a sliding window analysis using a win size of 50kb and step of 50kb
 -   The results for `ANGSD_Fst.sh` are located in `myresults/ANGSD/Fst`
@@ -107,7 +107,31 @@ myscripts folder. We used this to trim the adapters out of our red spruce fastq 
     -   Higher pi values show higher genetic diversity between the red and black spruce
 -   While the `ANGSD_Fst.sh script` was running, we created another script called `PCAngsd_RSBS.sh` to run a PCA analysis assuming the data fits a single eigenvalue
     -   The outputs are saved in `/myresults/ANGSD/PCA_ADMIX`
--   We created an R markdown file called PCA_Admixture.Rmd
+-   We created an R markdown file called `PCA_Admixture.Rmd`
     -   We used K=2 to represent the red spruce and the black spruce populations
     -   We created a bar plot and a scatter plot for PCA as well as a heat map to show the admixture between the red and black spruce populations
+    -   Evidence of hybridization seen in results
 -   `PCA_Admixture.Rmd` was knitted and saved into `mydocs`
+
+### 09/30/25: Genomic Scan for Selection
+
+-   Started by opening `PCA_Admixture.html` from last class
+    -   Quick review about PCA analysis
+    -   bar plot explains 18% of the variance
+    -   eigenvalue - variable that explains the maximum level of variance between the data points
+    -   Right now, K=2 in the `PCAngsd_RSBS.sh` for one eigenvalue
+    -   Change to K=3 for two eigenvalues and run SBATCH
+        -   `cd projects/eco_genomics_2025/population_genomics/myscripts`
+        -   `ls`
+        -   `sbatch PCAngsd_RSBS.sh`
+        -   `squeue --me`
+    -   Did not show much change between graphs since the main variance is in the first eigenvalue
+-   Made a new script called `PCAngsd_allRS_selection.sh`
+-   Overwrote a few things from the `PCAngsd_RSBS.sh file`, but the majority of the file is the same
+    -   See tutorial for added/changed code (K=3)
+-   Run SBATCH
+-   Create R markdown `RedSpruce_Selection.Rmd`
+    -   Still have latitudinal axis for RS and still shows introgression
+-   Based on the results showing the PC1 and PC2 scores against black spruce ancestry, they should both be examined
+-   We created Manhattan plots for the values in PC1 and PC1 to see the log distribution of each sample
+-   The R markdown file was knitted and both `RedSpruce_Selection.Rmd` and `RedSpruce_Selection.html` are saved into `mydocs`

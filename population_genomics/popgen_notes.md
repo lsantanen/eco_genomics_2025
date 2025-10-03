@@ -135,3 +135,32 @@ myscripts folder. We used this to trim the adapters out of our red spruce fastq 
 -   Based on the results showing the PC1 and PC2 scores against black spruce ancestry, they should both be examined
 -   We created Manhattan plots for the values in PC1 and PC1 to see the log distribution of each sample
 -   The R markdown file was knitted and both `RedSpruce_Selection.Rmd` and `RedSpruce_Selection.html` are saved into `mydocs`
+
+### 10/03/25: Homework 1 Option B (Due 10/9)
+
+-   Pulled up `PCAngsd_RSBS.sh` script from `myscripts`
+    -   Note all red spruce and black spruce samples will be used as that part of the code was not changed from what was done in class
+-   Need to have values of K=2,3,4,5 - already have 2 and 3 from previous runs
+    -   Results of these runs are saved in `myresults/ANGSD/PCA_ADMIX`
+    -   The necessary files are currently labeled `RSBS_poly_K2.cov` `RSBS_poly_K3.cov` `RSBS_poly_K2.admix.2.Q` `RSBS_poly_K3.admix.3.Q`
+-   Using the aforementioned `PCAngsd_RSBS.sh` script to run for K=4,5
+-   All K values are in the code, but they are commented out unless actively being used
+-   K=4 run on terminal `sbatch PCAngsd_RSBS.sh` output will be saved in `myresults/ANGSD/PCA_ADMIX` the same as the other outputs from this script
+    -   Waited for this run to end before running for K=5
+-   Both runs completed! Now have all files necessary to make an Rmarkdown file to view results and make plots
+-   Make a copy of `PCA_Admixture.Rmd` and called it `HW1_PCA_Admixture.Rmd` also saved in the `mydocs` folder
+-   In the Rmarkdown file `HW1_PCA_Admixture.Rmd` made a code chunk for each of the K values to find the variance and make a bar plot
+    -   Example of code chunk
+
+    -   `K=2`
+
+    -   `var <- round(PCA$values/sum(PCA$values),3)`
+
+    -   `var[1:3]`
+
+    -   `barplot(var,xlab="Eigenvalues of the PCA K=2", ylab="Proportion of variance explained K=2")`
+
+    -   All screeplots look the same for each K value although the variance values are different
+-   Forgot to make a different bamlist for the results
+    -   Go run everything in sbatch again this time changing the output to be K2_RSBS_bam.list (replacing the K values as needed)
+    -   Ran sbatch in the terminal, and stopped at that for the day

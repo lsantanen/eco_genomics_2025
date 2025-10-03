@@ -58,13 +58,16 @@ SUFFIX="RSBS_poly"
 
 # Make a copy of the list of bam files for all the red + black spruce samples and place in your repo. You'll need this later for making figures.
 
-cp ${INPUT}/RSBS_bam.list ${OUT}
+cp ${INPUT}/K2_RSBS_bam.list ${OUT}
 
 
 # Set value of K and number of PCA eigenvalues (=K-1)
 # K corresponds to the number of distinct ancestry groups you want to cluster genotypes into
 
-K=3
+K=2
+#K=3
+#K=4
+#K=5
 E=$((K-1))
 
 # Then, run PCA and admixture scores with pcangsd:

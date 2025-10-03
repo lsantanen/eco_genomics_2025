@@ -1,5 +1,5 @@
 PCAngsd v1.36.1
-Time: 25/09/2025 16:48:14
+Time: 03/10/2025 15:26:37
 Directory: /gpfs1/home/l/s/lsantane/projects/eco_genomics_2025/population_genomics/myscripts
 Options:
 	--beagle /gpfs1/cl/ecogen/pbio6800/PopulationGenomics/ANGSD/RSBS_poly.beagle.gz
@@ -17,4 +17,4 @@ Saved covariance matrix as /users/l/s/lsantane/projects/eco_genomics_2025/popula
 Saved admixture proportions as /users/l/s/lsantane/projects/eco_genomics_2025/population_genomics/myresults/ANGSD/PCA_ADMIX/RSBS_poly_K2.admix.2.Q
 Saved ancestral allele frequencies proportions as /users/l/s/lsantane/projects/eco_genomics_2025/population_genomics/myresults/ANGSD/PCA_ADMIX/RSBS_poly_K2.admix.2.P
 
-Total elapsed time: 2m17s
+Total elapsed time: 1m56s

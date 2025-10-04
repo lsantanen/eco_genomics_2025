@@ -161,6 +161,11 @@ myscripts folder. We used this to trim the adapters out of our red spruce fastq 
     -   `barplot(var,xlab="Eigenvalues of the PCA K=2", ylab="Proportion of variance explained K=2")`
 
     -   All screeplots look the same for each K value although the variance values are different
--   Forgot to make a different bamlist for the results
-    -   Go run everything in sbatch again this time changing the output to be K2_RSBS_bam.list (replacing the K values as needed)
-    -   Ran sbatch in the terminal, and stopped at that for the day
+
+10/4/2025
+
+-   Read in bam.list
+-   Plotted PCA for each K value
+    -   PCA plots look the same, but the % shown on the x and y axis change based on the K value
+-   Under the "data wrangling" line, changed the code chunk to include `data=data[,c(1:5)]` to get more of the eigenvalues for the PCA plots
+-   Need to go to office hours and check that PCA plots are correct and something is wrong with the admixture plots

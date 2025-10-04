@@ -58,7 +58,7 @@ SUFFIX="RSBS_poly"
 
 # Make a copy of the list of bam files for all the red + black spruce samples and place in your repo. You'll need this later for making figures.
 
-cp ${INPUT}/K2_RSBS_bam.list ${OUT}
+cp ${INPUT}/RSBS_bam.list ${OUT}
 
 
 # Set value of K and number of PCA eigenvalues (=K-1)

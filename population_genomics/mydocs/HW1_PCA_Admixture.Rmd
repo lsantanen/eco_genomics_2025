@@ -177,6 +177,9 @@ ord5<-order(pops[,2])
 Plot the admixture coefficients 
 
 ```{r}
+pdf("Admix_K2_K5.pdf",width=4,height=8)
+par(mfrow=c(4,1))
+
 #K=2
 barplot(t(q2)[,ord2],
         #col=cols[1:K],
@@ -190,7 +193,7 @@ abline(v=cumsum(sapply(unique(pops[ord2,2]),function(x){sum(pops[ord2,2]==x)})),
 #K=3
 barplot(t(q3)[,ord3],
         #col=cols[1:K],
-        col=c("black","red"),
+        col=c("red","black","coral1"),
         space=0,border=NA,
         xlab="Populations",ylab="Admixture proportions",
         main=paste0("Red Spruce-Black Spruce Admixture: K=",K3))
@@ -200,7 +203,7 @@ abline(v=cumsum(sapply(unique(pops[ord3,2]),function(x){sum(pops[ord3,2]==x)})),
 #K=4
 barplot(t(q4)[,ord4],
         #col=cols[1:K],
-        col=c("black","red"),
+        col=c("red","black","coral1","firebrick"),
         space=0,border=NA,
         xlab="Populations",ylab="Admixture proportions",
         main=paste0("Red Spruce-Black Spruce Admixture: K=",K4))
@@ -210,12 +213,24 @@ abline(v=cumsum(sapply(unique(pops[ord4,2]),function(x){sum(pops[ord4,2]==x)})),
 #K=5
 barplot(t(q5)[,ord5],
         #col=cols[1:K],
-        col=c("black","red"),
+        col=c("red","firebrick","coral1","black","tomato"),
         space=0,border=NA,
         xlab="Populations",ylab="Admixture proportions",
         main=paste0("Red Spruce-Black Spruce Admixture: K=",K5))
 text(tapply(1:nrow(pops),pops[ord5,2],mean),-0.05,unique(pops[ord5,2]),xpd=T,cex=0.75,srt=45)
 abline(v=cumsum(sapply(unique(pops[ord5,2]),function(x){sum(pops[ord5,2]==x)})),col=1,lwd=1.2)
+
+dev.off()
+```
+```{r}
+LL <-c(-6.015E7,-5.964E7,-5.927E7,-5.891E7) #put in correct values from log files
+#plot(LL)
+
+K<-seq(2,5,1)
+plot(K,LL,type="l")
+
+#length(PCA$values)
+
 ```
 
 

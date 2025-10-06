@@ -169,3 +169,13 @@ myscripts folder. We used this to trim the adapters out of our red spruce fastq 
     -   PCA plots look the same, but the % shown on the x and y axis change based on the K value
 -   Under the "data wrangling" line, changed the code chunk to include `data=data[,c(1:5)]` to get more of the eigenvalues for the PCA plots
 -   Need to go to office hours and check that PCA plots are correct and something is wrong with the admixture plots
+
+10/6/2025
+
+-   Went to office hours to fix admixture plots
+    -   Needed to add additional colors to the plots for higher K values, and needed to make sure correct colors lined up with correct populations (i.e. black spruce are represented by black and red spruce are represented as different shades of red)
+-   Don't need PCA plots for hw submission
+-   Created a graph for the log values for each value of K, created a combined plot pdf for the admixture graphs to include as one figure for hw submission, still need to make a graph for eigenvalues, but will do that in word
+    -   The log values were taken from the end of the out files located in `mylogs` for each K value
+    -   The pdf file with the figure with all the admixture plots combined is saved in `mydocs`
+-   Explain that the different reds for red spruce represent different same overall population, but there are different branches due to geographic differences that are highlighted by the admixture plots with higher K values

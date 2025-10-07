@@ -26,18 +26,18 @@ MYSAMP="C3R"
 # the wildcard here * allows for the different reps to be captured in the list
 # start a loop with this file as the input:
 
-for READ1 in ${MYSAMP}*_1.fq.gz
+for READ1 in ${MYSAMP}*_R1.fq.gz
 do
 
 # the partner to this file (read 2) can be found by replacing the _1.fq.gz with _2.fq.gz
 # second part of the input for PE reads
 
-READ2=${READ1/_1.fq.gz/_2.fq.gz}
+READ2=${READ1/_R1.fq.gz/_R2.fq.gz}
 
 # make the output file names: print the fastq name, replace _# with _#_clean
 
-NAME1=$(echo $READ1 | sed "s/_1/_1_clean/g")
-NAME2=$(echo $READ2 | sed "s/_2/_2_clean/g")
+NAME1=$(echo $READ1 | sed "s/_R1/_R1_clean/g")
+NAME2=$(echo $READ2 | sed "s/_R2/_R2_clean/g")
 
 # print the input and output to screen 
 

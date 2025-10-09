@@ -1,0 +1,62 @@
+mkdir: cannot create directory ‘/users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/myresults/fastp_reports’: File exists
+C3R1_S164_L007_R1_001.fastq.gz C3R1_S164_L007_R2_001.fastq.gz
+C3R1_S164_L007_R1_cleanLS_001.fastq.gz C3R1_S164_L007_R2_cleanLS_001.fastq.gz
+Detecting adapter sequence for read1...
+>I7_Nextera_Transposase_1 | >Trans2_rc | >I7_Nextera_Transposase_1 | >Trans2_rc
+CTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+
+Detecting adapter sequence for read2...
+>I5_Nextera_Transposase_1 | >Trans1_rc | >I5_Nextera_Transposase_1 | >Trans1_rc
+CTGTCTCTTATACACATCTGACGCTGCCGACGA
+
+Read1 before filtering:
+total reads: 31142488
+total bases: 4702515688
+Q20 bases: 4429025354(94.1842%)
+Q30 bases: 4143068384(88.1032%)
+
+Read2 before filtering:
+total reads: 31142488
+total bases: 4702515688
+Q20 bases: 4567648206(97.132%)
+Q30 bases: 4413811232(93.8606%)
+
+Read1 after filtering:
+total reads: 30062421
+total bases: 3563279659
+Q20 bases: 3554712041(99.7596%)
+Q30 bases: 3513175744(98.5939%)
+
+Read2 after filtering:
+total reads: 30062421
+total bases: 3553387701
+Q20 bases: 3546718929(99.8123%)
+Q30 bases: 3511186880(98.8124%)
+
+Filtering result:
+reads passed filter: 60124842
+reads failed due to low quality: 18118
+reads failed due to too many N: 13548
+reads failed due to too short: 2128468
+reads with adapter trimmed: 27163881
+bases trimmed due to adapters: 1286234318
+
+Duplication rate: 31.5232%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fastp.json
+HTML report: /users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/transcriptomics/myresults/fastp_reports/C3R1_S164_L007_R1_cleanLS_001.fastq.gz.html
+
+fastp -i C3R1_S164_L007_R1_001.fastq.gz -I C3R1_S164_L007_R2_001.fastq.gz -o /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R1_S164_L007_R1_cleanLS_001.fastq.gz -O /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R1_S164_L007_R2_cleanLS_001.fastq.gz --detect_adapter_for_pe --trim_poly_g --thread 4 --cut_right --cut_window_size 6 --qualified_quality_phred 20 --length_required 35 --html /users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/transcriptomics/myresults/fastp_reports/C3R1_S164_L007_R1_cleanLS_001.fastq.gz.html 
+fastp v0.23.4, time used: 101 seconds
+C3R3_S166_L007_R1_001.fastq.gz C3R3_S166_L007_R2_001.fastq.gz
+C3R3_S166_L007_R1_cleanLS_001.fastq.gz C3R3_S166_L007_R2_cleanLS_001.fastq.gz
+Detecting adapter sequence for read1...
+>I7_Nextera_Transposase_1 | >Trans2_rc | >I7_Nextera_Transposase_1 | >Trans2_rc
+CTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+
+Detecting adapter sequence for read2...
+>I5_Nextera_Transposase_1 | >Trans1_rc | >I5_Nextera_Transposase_1 | >Trans1_rc
+CTGTCTCTTATACACATCTGACGCTGCCGACGA
+

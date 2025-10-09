@@ -1,5 +1,16 @@
 #!/bin/bash   
 
+#SBATCH --partition=general
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=16G
+#SBATCH --time=1:00:00 
+#SBATCH --job-name=Fastp
+#SBATCH --output=/users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/mylogs/%x_%j.out
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=lsantane@uvm.edu
+
 # This script loops through a set of files defined by MYSAMP, matching left and right reads
 # and cleans the raw data using fastp according to parameters set below
 
@@ -26,18 +37,18 @@ MYSAMP="C3R"
 # the wildcard here * allows for the different reps to be captured in the list
 # start a loop with this file as the input:
 
-for READ1 in ${MYSAMP}*_R1.fq.gz
+for READ1 in ${MYSAMP}*_R1*.gz
 do
 
 # the partner to this file (read 2) can be found by replacing the _1.fq.gz with _2.fq.gz
 # second part of the input for PE reads
 
-READ2=${READ1/_R1.fq.gz/_R2.fq.gz}
+READ2=${READ1/_R1*.gz/_R2*.gz}
 
 # make the output file names: print the fastq name, replace _# with _#_clean
 
-NAME1=$(echo $READ1 | sed "s/_R1/_R1_clean/g")
-NAME2=$(echo $READ2 | sed "s/_R2/_R2_clean/g")
+NAME1=$(echo $READ1 | sed "s/_R1/_R1_cleanLS/g")
+NAME2=$(echo $READ2 | sed "s/_R2/_R2_cleanLS/g")
 
 # print the input and output to screen 
 
@@ -53,6 +64,6 @@ fastp -i ${READ1} -I ${READ2} -o /gpfs1/cl/ecogen/pbio6800/Transcriptomics/clean
 --cut_window_size 6 \
 --qualified_quality_phred 20 \
 --length_required 35 \
---html ~/myresults/fastqc/${NAME1}.html
+--html ${MYREPO}/transcriptomics/myresults/fastp_reports/${NAME1}.html
 
 done

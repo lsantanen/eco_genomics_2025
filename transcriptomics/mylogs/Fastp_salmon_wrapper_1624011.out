@@ -60,3 +60,54 @@ Detecting adapter sequence for read2...
 >I5_Nextera_Transposase_1 | >Trans1_rc | >I5_Nextera_Transposase_1 | >Trans1_rc
 CTGTCTCTTATACACATCTGACGCTGCCGACGA
 
+Read1 before filtering:
+total reads: 28942916
+total bases: 4370380316
+Q20 bases: 4068682561(93.0968%)
+Q30 bases: 3761921237(86.0777%)
+
+Read2 before filtering:
+total reads: 28942916
+total bases: 4370380316
+Q20 bases: 4234950399(96.9012%)
+Q30 bases: 4083468008(93.4351%)
+
+Read1 after filtering:
+total reads: 27887497
+total bases: 3098054604
+Q20 bases: 3090049985(99.7416%)
+Q30 bases: 3053494218(98.5617%)
+
+Read2 after filtering:
+total reads: 27887497
+total bases: 3085453412
+Q20 bases: 3079148195(99.7956%)
+Q30 bases: 3047526058(98.7708%)
+
+Filtering result:
+reads passed filter: 55774994
+reads failed due to low quality: 15556
+reads failed due to too many N: 11202
+reads failed due to too short: 2084080
+reads with adapter trimmed: 30593445
+bases trimmed due to adapters: 1483327511
+
+Duplication rate: 26.1933%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fastp.json
+HTML report: /users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/transcriptomics/myresults/fastp_reports/C3R3_S166_L007_R1_cleanLS_001.fastq.gz.html
+
+fastp -i C3R3_S166_L007_R1_001.fastq.gz -I C3R3_S166_L007_R2_001.fastq.gz -o /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R3_S166_L007_R1_cleanLS_001.fastq.gz -O /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R3_S166_L007_R2_cleanLS_001.fastq.gz --detect_adapter_for_pe --trim_poly_g --thread 4 --cut_right --cut_window_size 6 --qualified_quality_phred 20 --length_required 35 --html /users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/transcriptomics/myresults/fastp_reports/C3R3_S166_L007_R1_cleanLS_001.fastq.gz.html 
+fastp v0.23.4, time used: 90 seconds
+C3R4_S170_L007_R1_001.fastq.gz C3R4_S170_L007_R2_001.fastq.gz
+C3R4_S170_L007_R1_cleanLS_001.fastq.gz C3R4_S170_L007_R2_cleanLS_001.fastq.gz
+Detecting adapter sequence for read1...
+>I7_Nextera_Transposase_1 | >Trans2_rc | >I7_Nextera_Transposase_1 | >Trans2_rc
+CTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+
+Detecting adapter sequence for read2...
+>I5_Nextera_Transposase_1 | >Trans1_rc | >I5_Nextera_Transposase_1 | >Trans1_rc
+CTGTCTCTTATACACATCTGACGCTGCCGACGA
+

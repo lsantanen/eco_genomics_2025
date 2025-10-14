@@ -111,3 +111,235 @@ Detecting adapter sequence for read2...
 >I5_Nextera_Transposase_1 | >Trans1_rc | >I5_Nextera_Transposase_1 | >Trans1_rc
 CTGTCTCTTATACACATCTGACGCTGCCGACGA
 
+Read1 before filtering:
+total reads: 28336027
+total bases: 4278740077
+Q20 bases: 3985305628(93.142%)
+Q30 bases: 3681052376(86.0312%)
+
+Read2 before filtering:
+total reads: 28336027
+total bases: 4278740077
+Q20 bases: 4125035028(96.4077%)
+Q30 bases: 3950337167(92.3248%)
+
+Read1 after filtering:
+total reads: 27312853
+total bases: 2945060468
+Q20 bases: 2936463527(99.7081%)
+Q30 bases: 2898220304(98.4095%)
+
+Read2 after filtering:
+total reads: 27312853
+total bases: 2932716453
+Q20 bases: 2926362822(99.7834%)
+Q30 bases: 2895783145(98.7406%)
+
+Filtering result:
+reads passed filter: 54625706
+reads failed due to low quality: 12686
+reads failed due to too many N: 10798
+reads failed due to too short: 2022864
+reads with adapter trimmed: 31937580
+bases trimmed due to adapters: 1563149229
+
+Duplication rate: 22.966%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fastp.json
+HTML report: /users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/transcriptomics/myresults/fastp_reports/C3R4_S170_L007_R1_cleanLS_001.fastq.gz.html
+
+fastp -i C3R4_S170_L007_R1_001.fastq.gz -I C3R4_S170_L007_R2_001.fastq.gz -o /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R4_S170_L007_R1_cleanLS_001.fastq.gz -O /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R4_S170_L007_R2_cleanLS_001.fastq.gz --detect_adapter_for_pe --trim_poly_g --thread 4 --cut_right --cut_window_size 6 --qualified_quality_phred 20 --length_required 35 --html /users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/transcriptomics/myresults/fastp_reports/C3R4_S170_L007_R1_cleanLS_001.fastq.gz.html 
+fastp v0.23.4, time used: 89 seconds
+C3R5_S167_L007_R1_001.fastq.gz C3R5_S167_L007_R2_001.fastq.gz
+C3R5_S167_L007_R1_cleanLS_001.fastq.gz C3R5_S167_L007_R2_cleanLS_001.fastq.gz
+Detecting adapter sequence for read1...
+>I7_Nextera_Transposase_1 | >Trans2_rc | >I7_Nextera_Transposase_1 | >Trans2_rc
+CTGTCTCTTATACACATCTCCGAGCCCACGAGAC
+
+Detecting adapter sequence for read2...
+>I5_Nextera_Transposase_1 | >Trans1_rc | >I5_Nextera_Transposase_1 | >Trans1_rc
+CTGTCTCTTATACACATCTGACGCTGCCGACGA
+
+Read1 before filtering:
+total reads: 35165896
+total bases: 5310050296
+Q20 bases: 4976808708(93.7243%)
+Q30 bases: 4627189994(87.1402%)
+
+Read2 before filtering:
+total reads: 35165896
+total bases: 5310050296
+Q20 bases: 5159321015(97.1614%)
+Q30 bases: 4978769053(93.7612%)
+
+Read1 after filtering:
+total reads: 33897997
+total bases: 3899653904
+Q20 bases: 3889987787(99.7521%)
+Q30 bases: 3843363547(98.5565%)
+
+Read2 after filtering:
+total reads: 33897997
+total bases: 3887248577
+Q20 bases: 3879231195(99.7938%)
+Q30 bases: 3837991679(98.7329%)
+
+Filtering result:
+reads passed filter: 67795994
+reads failed due to low quality: 18090
+reads failed due to too many N: 14568
+reads failed due to too short: 2503140
+reads with adapter trimmed: 33927842
+bases trimmed due to adapters: 1627380895
+
+Duplication rate: 30.5514%
+
+Insert size peak (evaluated by paired-end reads): 151
+
+JSON report: fastp.json
+HTML report: /users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/transcriptomics/myresults/fastp_reports/C3R5_S167_L007_R1_cleanLS_001.fastq.gz.html
+
+fastp -i C3R5_S167_L007_R1_001.fastq.gz -I C3R5_S167_L007_R2_001.fastq.gz -o /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R5_S167_L007_R1_cleanLS_001.fastq.gz -O /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R5_S167_L007_R2_cleanLS_001.fastq.gz --detect_adapter_for_pe --trim_poly_g --thread 4 --cut_right --cut_window_size 6 --qualified_quality_phred 20 --length_required 35 --html /users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/transcriptomics/myresults/fastp_reports/C3R5_S167_L007_R1_cleanLS_001.fastq.gz.html 
+fastp v0.23.4, time used: 111 seconds
+salmon 1.10.2
+Starting Salmon quantification at: Thu Oct  9 05:33:33 PM EDT 2025
+Running on node: node334.cluster
+Starting sample C3R1_S164_L007
+Version Server Response: Not Found
+### salmon (selective-alignment-based) v1.10.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/reference/salmon_index }
+### [ libType ] => { A }
+### [ mates1 ] => { C3R1_S164_L007_R1_cleanLS_001.fastq.gz }
+### [ mates2 ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R1_S164_L007_R2_cleanLS_001.fastq.gz }
+### [ threads ] => { 8 }
+### [ softclip ] => { }
+### [ seqBias ] => { }
+### [ gcBias ] => { }
+### [ output ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R1_S164_L007 }
+Logs will be written to /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R1_S164_L007/logs
+logger failed with : [Failed opening file /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R1_S164_L007/logs/salmon_quant.log for writing: Permission denied]. Exiting.
+Sample C3R1_S164_L007 done
+Starting sample C3R1_S164_L007
+Version Server Response: Not Found
+### salmon (selective-alignment-based) v1.10.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/reference/salmon_index }
+### [ libType ] => { A }
+### [ mates1 ] => { C3R1_S164_L007_R1_cleanMM_001.fastq.gz }
+### [ mates2 ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R1_S164_L007_R2_cleanMM_001.fastq.gz }
+### [ threads ] => { 8 }
+### [ softclip ] => { }
+### [ seqBias ] => { }
+### [ gcBias ] => { }
+### [ output ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R1_S164_L007 }
+Logs will be written to /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R1_S164_L007/logs
+logger failed with : [Failed opening file /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R1_S164_L007/logs/salmon_quant.log for writing: Permission denied]. Exiting.
+Sample C3R1_S164_L007 done
+Starting sample C3R3_S166_L007
+Version Server Response: Not Found
+### salmon (selective-alignment-based) v1.10.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/reference/salmon_index }
+### [ libType ] => { A }
+### [ mates1 ] => { C3R3_S166_L007_R1_cleanLS_001.fastq.gz }
+### [ mates2 ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R3_S166_L007_R2_cleanLS_001.fastq.gz }
+### [ threads ] => { 8 }
+### [ softclip ] => { }
+### [ seqBias ] => { }
+### [ gcBias ] => { }
+### [ output ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R3_S166_L007 }
+Logs will be written to /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R3_S166_L007/logs
+logger failed with : [Failed opening file /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R3_S166_L007/logs/salmon_quant.log for writing: Permission denied]. Exiting.
+Sample C3R3_S166_L007 done
+Starting sample C3R3_S166_L007
+Version Server Response: Not Found
+### salmon (selective-alignment-based) v1.10.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/reference/salmon_index }
+### [ libType ] => { A }
+### [ mates1 ] => { C3R3_S166_L007_R1_cleanMM_001.fastq.gz }
+### [ mates2 ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R3_S166_L007_R2_cleanMM_001.fastq.gz }
+### [ threads ] => { 8 }
+### [ softclip ] => { }
+### [ seqBias ] => { }
+### [ gcBias ] => { }
+### [ output ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R3_S166_L007 }
+Logs will be written to /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R3_S166_L007/logs
+logger failed with : [Failed opening file /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R3_S166_L007/logs/salmon_quant.log for writing: Permission denied]. Exiting.
+Sample C3R3_S166_L007 done
+Starting sample C3R4_S170_L007
+Version Server Response: Not Found
+### salmon (selective-alignment-based) v1.10.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/reference/salmon_index }
+### [ libType ] => { A }
+### [ mates1 ] => { C3R4_S170_L007_R1_cleanLS_001.fastq.gz }
+### [ mates2 ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R4_S170_L007_R2_cleanLS_001.fastq.gz }
+### [ threads ] => { 8 }
+### [ softclip ] => { }
+### [ seqBias ] => { }
+### [ gcBias ] => { }
+### [ output ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R4_S170_L007 }
+Logs will be written to /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R4_S170_L007/logs
+logger failed with : [Failed opening file /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R4_S170_L007/logs/salmon_quant.log for writing: Permission denied]. Exiting.
+Sample C3R4_S170_L007 done
+Starting sample C3R4_S170_L007
+Version Server Response: Not Found
+### salmon (selective-alignment-based) v1.10.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/reference/salmon_index }
+### [ libType ] => { A }
+### [ mates1 ] => { C3R4_S170_L007_R1_cleanMM_001.fastq.gz }
+### [ mates2 ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R4_S170_L007_R2_cleanMM_001.fastq.gz }
+### [ threads ] => { 8 }
+### [ softclip ] => { }
+### [ seqBias ] => { }
+### [ gcBias ] => { }
+### [ output ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R4_S170_L007 }
+Logs will be written to /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R4_S170_L007/logs
+logger failed with : [Failed opening file /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R4_S170_L007/logs/salmon_quant.log for writing: Permission denied]. Exiting.
+Sample C3R4_S170_L007 done
+Starting sample C3R5_S167_L007
+Version Server Response: Not Found
+### salmon (selective-alignment-based) v1.10.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/reference/salmon_index }
+### [ libType ] => { A }
+### [ mates1 ] => { C3R5_S167_L007_R1_cleanLS_001.fastq.gz }
+### [ mates2 ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R5_S167_L007_R2_cleanLS_001.fastq.gz }
+### [ threads ] => { 8 }
+### [ softclip ] => { }
+### [ seqBias ] => { }
+### [ gcBias ] => { }
+### [ output ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R5_S167_L007 }
+Logs will be written to /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R5_S167_L007/logs
+logger failed with : [Failed opening file /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R5_S167_L007/logs/salmon_quant.log for writing: Permission denied]. Exiting.
+Sample C3R5_S167_L007 done
+Starting sample C3R5_S167_L007
+Version Server Response: Not Found
+### salmon (selective-alignment-based) v1.10.2
+### [ program ] => salmon 
+### [ command ] => quant 
+### [ index ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/reference/salmon_index }
+### [ libType ] => { A }
+### [ mates1 ] => { C3R5_S167_L007_R1_cleanMM_001.fastq.gz }
+### [ mates2 ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/cleandata/C3R5_S167_L007_R2_cleanMM_001.fastq.gz }
+### [ threads ] => { 8 }
+### [ softclip ] => { }
+### [ seqBias ] => { }
+### [ gcBias ] => { }
+### [ output ] => { /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R5_S167_L007 }
+Logs will be written to /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R5_S167_L007/logs
+logger failed with : [Failed opening file /gpfs1/cl/ecogen/pbio6800/Transcriptomics/transcripts_quant/C3R5_S167_L007/logs/salmon_quant.log for writing: Permission denied]. Exiting.
+Sample C3R5_S167_L007 done
+Salmon quantification completed at: Thu Oct  9 05:33:34 PM EDT 2025

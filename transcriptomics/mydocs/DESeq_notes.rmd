@@ -99,6 +99,7 @@ apply(countsTableRound,1,mean) # 1 in the apply function does the action across 
 ```{r}
 hist(apply(countsTableRound,1,mean),xlim=c(0,15000), ylim=c(0,100),breaks=10000)
 ```
+#Now that we've explored the data, let's run DESeq2
 
 ```{r}
 
@@ -131,5 +132,126 @@ dds <- DESeq(dds)
 # List the results you've generated
 resultsNames(dds)
 # Copy the results names 
+```
+Continuing on 10/16/25
+
+```{r}
+# The goal of transformation "is to remove the dependence of the variance on the mean, particularly the high variance of the logarithm of count data when the mean is low."
+
+# this gives log2(n + 1)
+ntd <- normTransform(dds)
+meanSdPlot(assay(ntd))
+
+# Variance stabilizing transformation
+vsd <- vst(dds, blind=FALSE)
+meanSdPlot(assay(vsd))
+
+```
+
+Use the variance stabilized data to make plots
+Look for outliers
+
+```{r}
+sampleDists <- dist(t(assay(vsd)))
+
+library("RColorBrewer")
+sampleDistMatrix <- as.matrix(sampleDists)
+rownames(sampleDistMatrix) <- paste(vsd$line, vsd$generation, sep="-")
+colnames(sampleDistMatrix) <- NULL
+colors <- colorRampPalette( rev(brewer.pal(9, "Blues")) )(255)
+pheatmap(sampleDistMatrix,
+         clustering_distance_rows=sampleDists,
+         clustering_distance_cols=sampleDists,
+         col=colors)
+
+# Note any outliers
+```
+Make a cluster tree to look for outlier samples 
+
+```{r}
+sampleTree <- hclust(dist(sampleDists), method="average")
+# plot
+plot(sampleTree, main="Sample clustering to detect outliers", sub="", xlab="",cex.lab=1.5, cex.axis=1.5, cex.main=2)
+```
+
+On to PCA...
+
+```{r}
+# first transform the data for plotting using variance stabilization
+vsd <- vst(dds, blind=FALSE)
+
+pcaData <- plotPCA(vsd, intgroup=c("line","generation"), returnData=TRUE)
+percentVar <- round(100 * attr(pcaData,"percentVar"))
+
+ggplot(pcaData, aes(PC1, PC2, color=line, shape=generation)) +
+  geom_point(size=3) +
+  xlab(paste0("PC1: ",percentVar[1],"% variance")) +
+  ylab(paste0("PC2: ",percentVar[2],"% variance")) + 
+  coord_fixed()
+```
+
+Optimizing data visualization
+Added in additional detail
+Points are bigger, added shapes and indicated what they are, treatments are blue vs red
+
+```{r}
+ggplot(pcaData, aes(PC1, PC2)) +
+  geom_point(size=5, stroke = 1, aes(fill=line, shape=generation, alpha = generation)) +
+  xlab(paste0("PC1: ",percentVar[1],"% variance")) +
+  ylab(paste0("PC2: ",percentVar[2],"% variance")) +
+  scale_shape_manual(values=c(21,22,23,24), labels = c("G1", "G2","G3", "G4"))+
+  #scale_shape_manual(values=c(21,22,23,24) -> circle, square, diamond, triangle
+  scale_fill_manual(values=c('#6699CC',"#CC3333"), labels = c("Control", "Treatment"))+
+  scale_alpha_manual(values = c(1.0, 0.8, 0.7, 0.3), guide = "none") +
+  theme_bw() +
+  theme(legend.position = "none") +
+  theme(panel.border = element_rect(color = "black", fill = NA, size = 3))+
+  theme(text = element_text(size = 20)) +
+  theme(legend.title = element_blank())
+```
+Differential gene expression testing
+Making groups to test specific contrasts
+
+```{r}
+dds$line <- relevel(dds$line, ref = "control")
+dds$generation <- relevel(dds$generation, ref = "G1")
+
+
+dds$group <- factor(paste0(dds$line, dds$generation))
+design(dds) <- ~ group
+dds <- DESeq(dds)
+resultsNames(dds)
+
+```
+
+Pull out results of interest using control generation 1 and treatment generation 1 with a sig value of .05
+
+Can change the order that the contrast is in (control and treatment) and the log2FoldChange will switch signs
+
+```{r}
+resG1_CvT <- results(dds, contrast=c("group","controlG1","treatmentG1"), alpha = 0.05)
+
+summary(resG1_CvT)
+```
+Reorder by significance
+
+```{r}
+resG1_CvT <- resG1_CvT[order(resG1_CvT$padj),]
+head(resG1_CvT)
+```
+
+Plot individual genes
+
+```{r}
+# Counts of specific top interaction gene! (important validatition that the normalization, model is working)
+d <-plotCounts(dds, gene="TRINITY_DN93941_c0_g3_i1", intgroup = (c("line","generation")), returnData=TRUE)
+d
+
+p <-ggplot(d, aes(x=line, y=count, color=line, shape=generation)) + 
+  theme_minimal() + theme(text = element_text(size=20), panel.grid.major=element_line(colour="grey"))
+p <- p + geom_point(position=position_jitter(w=0.2,h=0), size=3)
+
+p <- p + stat_summary(fun = mean, geom = "point", size=5, alpha=0.7) 
+p
 ```
 

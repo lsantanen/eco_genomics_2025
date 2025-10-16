@@ -77,3 +77,55 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 -   defined the DESeq2 object
 
 -   stopped here and will create a PCA plot next time
+
+### 10/16/2025: Gene Expression and Analysis Continued
+
+-   Opened `DESeq_notes.rmd` from last class located in `mydocs`
+
+-   Last class was data exploration, and this time we will run DESeq2
+
+-   Left off talking about expected patterns of PCA
+
+-   Pick up with actually making the PCA from the tutorial
+
+-   Looking at two different types of distributions
+
+    -   See average expression from 0 to 15,000 and a line of average expression (std dev)
+
+-   Made a heat map based on the sample distance matrix, how dissimilar is each sample from every other sample
+
+-   Along 1:1 line is the sample compared to itself
+
+    -   Nothing too crazy in the results
+
+-   Moved on to making a cluster tree to see outlier samples (`hclust`)
+
+    -   No outliers just like as seen in the previous step
+
+-   Now onto PCA...
+
+    -   Distinct clustering of G4 in control and treatment
+
+    -   G1 and G4 are separated by PC1
+
+    -   All generations separated along PC1, which explains 32% of the variance
+
+    -   PC2 splits control and treatment for G3 and G2
+
+    -   PC axes are larger than we've seen previously, which is based on the data
+
+        -   DNA vs RNA - what are you looking at
+
+-   Made another PCA graph to try an optimize the data visualization
+
+-   Move on to testing for differential gene expression using the group model
+
+-   Pull out results of interest and reorder them by significance
+
+-   Plot individual genes
+
+    -   Just input the gene names into the code to see the expressions
+
+-   All work was done in `DESeq2_notes.rmd`
+
+-   Continue next week with heat map, MA plot, and Euler plot

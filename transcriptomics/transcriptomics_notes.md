@@ -78,7 +78,7 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 
 -   stopped here and will create a PCA plot next time
 
-### 10/16/2025: Gene Expression and Analysis Continued
+### 10/16/2025: Gene Expression and Analysis Continued (DESeq cont.)
 
 -   Opened `DESeq_notes.rmd` from last class located in `mydocs`
 
@@ -129,3 +129,27 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 -   All work was done in `DESeq2_notes.rmd`
 
 -   Continue next week with heat map, MA plot, and Euler plot
+
+### 10/21/2025: Continue Data Visualization (DESeq cont.)
+
+-   Reminder: `DESeq_notes.rmd` is saved under `mydocs` and has been used continuously since 10/14
+-   Left off last week on plotting individual genes, this time move on to making an MA plot
+-   Updated code was provided for plotting individual genes to make a clearer graph, so code was updated in `DESeq_notes.rmd`
+    -   Gene name is listed as "XXX" in code but can be filled in with any of the genes directly above
+-   The tutorial has typical questions above each code chunk for the plots
+    -   i.e. what does this plot potentially answer
+-   Create a heatmap to visualize the top 100 genes
+-   Explore differentially expressed genes from each generation
+    -   Created and saved results files for all the different contrasts from each generation
+-   Take the sig genes from G1 and create a heatmap to see how they change across generations
+    -   See if we can make the same plot focusing on the generation 2 significant genes
+    -   Change every instance of `G1` in code to `G2` and change matrix name from `lfc_mat` to `lfc_mat2` to ensure there's no interference with original graph
+    -   Can see there's more genes expressed in G2 than in G1
+    -   Can see that G1, G3, and G4 are all more similar to each other than to G2
+-   Go on to make a Venn or Euler plot
+    -   Focus on comparing G1, G2, and G3 because G3 and G4 are very similar and making a Venn diagram with 4 categories becomes very complicated
+        -   Not every comparison is able to be made and there are too many categories which makes it very tedious to calculate
+    -   Overlapping 214 genes are most likely doing opposite things in the two different generations (G1 and G2)
+    -   Based on the previous plots made
+-   Make sure to have `library(eulerr)` loaded to make the Euler plot
+    -   Can have it up at the top of the code with the other loaded libraries, or can just add it to the top of the code chunk - either way run it first!

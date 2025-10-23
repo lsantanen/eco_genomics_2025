@@ -153,3 +153,13 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
     -   Based on the previous plots made
 -   Make sure to have `library(eulerr)` loaded to make the Euler plot
     -   Can have it up at the top of the code with the other loaded libraries, or can just add it to the top of the code chunk - either way run it first!
+
+### 10/23/2025: DESeq2 to TopGO
+
+-   Created a new R markdown file called `DESeq2toTopGO.rmd` and saved it in `mydocs`
+-   Using the outputs we created last class from DESeq2 we started putting data into TopGO
+-   Created a few different plots to visualize data a bit before exploring all the differentially expressed genes
+    -   Looked at differential expression contrast, distribution of results, relationships between the metrics, and a density plot with a rugplot to understand what was tested in the functional enrichment test
+-   Then ran TopGO to see the GO enrichment
+-   Created an output txt file called `topGOsig_for_REVIGO.txt` which can be copy-pasted into revigo and see the results that it outputs like different plots
+-   Note for markdown script created today, the paths weren't working although the root directory was loaded, so all files had to have the complete path with them

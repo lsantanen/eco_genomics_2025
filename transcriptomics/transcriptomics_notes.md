@@ -163,3 +163,37 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 -   Then ran TopGO to see the GO enrichment
 -   Created an output txt file called `topGOsig_for_REVIGO.txt` which can be copy-pasted into revigo and see the results that it outputs like different plots
 -   Note for markdown script created today, the paths weren't working although the root directory was loaded, so all files had to have the complete path with them
+
+### 10/28/2025: Weighted Gene Correlation Network Analysis
+
+-   Mini lecture on WGCNA with summary in the tutorials website
+
+-   Start by creating a new Rmarkdown file called `DESeq2toWGCNA.rmd` saved under `mydocs`
+
+-   Copy `WGCNA_TraitData.csv` into `mydata` then import into code to filter gene expression based on variance
+
+-   Choose a set of soft-thresholding powers
+
+    -   Output shows graphs with a desired R\^2 of .8
+
+-   For network construction choose a soft-threshold between 16-24 (17) and create a network construction output file called `bwnet_results_WGCNA.RData` saved under `mydata` that can be used for future codes
+
+-   Create a dendrogram of the modules
+
+    -   gray module should always be the largest and functions as a sort of "catch-all"
+
+-   Test for correlation between the eigenvalues and ULT trait data for each module
+
+    -   output is a heat map where the highest value is the category that we want to further investigate (midnight blue)
+
+-   Plot the eigenvalues by treatment and line conditions (using midnight blue)
+
+    -   the output is a graph of each of the eigenvalues vs generation
+
+-   Go back to the GO analysis that we did last class
+
+-   See what GO categories are present and create a list of them to put into REVIGO to view the complete GO analysis
+
+-   All of the work done today is saved in the `DESeq2toWGCA.rmd` file which is saved in `mydocs` with the other markdown files from transcriptomics
+
+-   All the code is provided on the Tutorial 6 page in github

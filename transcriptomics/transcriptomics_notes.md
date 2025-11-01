@@ -197,3 +197,49 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 -   All of the work done today is saved in the `DESeq2toWGCA.rmd` file which is saved in `mydocs` with the other markdown files from transcriptomics
 
 -   All the code is provided on the Tutorial 6 page in github
+
+### 11/01/2025: Homework 2
+
+-   What are the functional differences among genes differentially
+    expressed at G1 vs. G2 vs. G3 vs. G4? To address this question, you
+    would use DESeq2 to set up your contrasts of interest, export your
+    results to use as input for TopGO, compare GO enrichment results using
+    REViGO or another platform.
+
+-   Chose the question above
+
+-   Started by creating a copy of `DESeq2toTopGO.rmd` and naming it `Homework 2.Rmd` which is also saved under `mydocs`
+
+    -   Figured out the issue with loading files from class the first code chunk did not have `{r setup, include=FALSE}` at the top it only had `{r}`, so that has been fixed in this file
+
+-   In class, only ran TopGO for G2, so create graphs for all gens with the biological function vs -log10-classicFisher
+
+-   Use same code chunk from class just change to G1, G2, G3, or G4 as needed
+
+-   Do same process with code to make txt file with info to put into REVIGO
+
+-   Each of the generations in the code has a line of \#### betweeen them to make it clear where each generation starts and ends
+
+-   Accidentally saved output files into `mydata`, moved them into `mydocs` to stay consistent with where the other files relevant to these analyses are stored
+
+-   Each gen has a different amount of genes printed into the txt file
+
+    -   Gen1: 32
+
+    -   Gen2: 201
+
+    -   Gen3: 83
+
+    -   Gen4: 71
+
+    -   Each GO Enrichment plot only had 30 genes on it
+
+    -   Maybe just take top 30 from each txt file?
+
+-   For final comparison use the main categories shown in the tree map from each Gen to discuss differences between generations
+
+-   Colors on tree map represent superclusters that group terms that are similar - comparison could be what superclusters are in each generation? And how many superclusters each generation has?
+
+-   Need to go to office hours to check
+
+-   Edited code chunk that creates `topGOsig_for_REVIGO.txt` files so if the code needs to be run again the output will print into `mydocs`

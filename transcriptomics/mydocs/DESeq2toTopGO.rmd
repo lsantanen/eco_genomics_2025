@@ -5,7 +5,7 @@ date: "2025-10-23"
 output: html_document
 ---
 
-```{r}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 knitr::opts_knit$set(root.dir="/users/l/s/lsantane/projects/eco_genomics_2025/transcriptomics/mydata")
 ```

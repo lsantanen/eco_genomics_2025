@@ -271,6 +271,23 @@ TopGO_plot <- function(df, title) {
 # Generate plot
 topGO_plot <- TopGO_plot(filtered_GO_results, "GO Enrichment for DEGs at Gen1")
 topGO_plot
+
+######
+G1_GOenrich = res_table[which(res_table$classicFisher<0.05),"GO.ID"]
+G1_GOGenes = names(gene2GO[which((gene2GO %in% G1_GOenrich)==TRUE)])
+
+G1_GO_LFC = res_G1_df[which(res_G1_df$geneID %in% G1_GOGenes),]
+
+G2_GO_LFC = res_G2_df[which(res_G2_df$geneID %in% G1_GOGenes),]
+
+G1G2merged = as.data.frame(cbind(G1_GO_LFC$log2FoldChange,G2_GO_LFC$log2FoldChange))
+names(G1G2merged) = c("G1_LFC","G2_LFC")
+
+#plot(G1G2merged$G1_LFC,G1G2merged$G2_LFC)
+
+ggplot(G1G2merged,aes(x=G1_LFC,y=G2_LFC)) +
+  geom_point()
+
 ```
 
 Output the enrichment results from TopGO and try REViGO - make sure to rename the files for each gen!

@@ -200,11 +200,7 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 
 ### 11/01/2025: Homework 2
 
--   What are the functional differences among genes differentially
-    expressed at G1 vs. G2 vs. G3 vs. G4? To address this question, you
-    would use DESeq2 to set up your contrasts of interest, export your
-    results to use as input for TopGO, compare GO enrichment results using
-    REViGO or another platform.
+-   What are the functional differences among genes differentially expressed at G1 vs. G2 vs. G3 vs. G4? To address this question, you would use DESeq2 to set up your contrasts of interest, export your results to use as input for TopGO, compare GO enrichment results using REViGO or another platform.
 
 -   Chose the question above
 
@@ -243,3 +239,23 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 -   Need to go to office hours to check
 
 -   Edited code chunk that creates `topGOsig_for_REVIGO.txt` files so if the code needs to be run again the output will print into `mydocs`
+
+11/3/2025
+
+-   Possible figure ideas
+
+    -   4 panel topgo plot
+
+    -   same thing but for revigo output scatterplot
+
+    -   venn diagram of most common GO category in each gen (plot overlap in 4 GO categories) how many assigned to category in G1 how many in G2 etc.
+
+    -   \# enriched genes for different GO categories (#degs on y axis gens on x axis) how functional enrichment changes across generations
+
+    -   logFC of different generations to compare generational expression
+
+        -   take all topgo genes for a given gen (say G1), save as a data frame, pull out from results the genes that are in that data frame (say G2)
+
+        -   color/symbolize genes between gens
+
+-   Rename tonsa stat and restable for each gen to make sure there's no variable recycling

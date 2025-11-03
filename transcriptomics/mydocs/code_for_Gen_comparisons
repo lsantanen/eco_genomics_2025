@@ -1,0 +1,15 @@
+
+
+
+# Step 1: generate a vector of GO terms that represent the enriched set from your topGO or ReviGO analysis
+G1_GOenrich = res_table[which(res_table$classicFisher<0.05),"GO.ID"]
+
+# Step 2: map the GO terms from your enriched set back to the tonsa gene IDs
+G1_GOGenes = names(gene2GO[which((gene2GO %in% G1_GOenrich)==TRUE)])
+
+# Step 3: Use the gene IDs that represent genes associated with significantly enriched GO terms and pull out the logFC values from the DESeq results for plotting
+res_G1_df[which(res_G1_df$geneID %in% G1_GOGenes),]
+
+res_G2_df[which(res_G2_df$geneID %in% G1_GOGenes),]
+
+G1G2merged <- left_join(res_G1_df,res_G2_df)

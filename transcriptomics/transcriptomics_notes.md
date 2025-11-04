@@ -240,7 +240,9 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 
 -   Edited code chunk that creates `topGOsig_for_REVIGO.txt` files so if the code needs to be run again the output will print into `mydocs`
 
-11/3/2025
+#### 11/3/2025
+
+-   Office hours with Steve
 
 -   Possible figure ideas
 
@@ -258,4 +260,16 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 
         -   color/symbolize genes between gens
 
--   Rename tonsa stat and restable for each gen to make sure there's no variable recycling
+-   Rename `tonsa_stat` and `res_table` for each gen to make sure there's no variable recycling
+
+-   Wrote code to make the plot for comparing LFC of DEGs in G1 to G2 and code will be modified to work in the reverse as well
+
+    -   The code was written into a txt file first which is called `code_for_Gen_comparisons.txt` and is saved under `mydocs`
+
+#### 11/4/2025
+
+-   Changed the `tonsa_stat` and `res_table` to be `G1_tonsa_stat` and `G1_res_table` and so on with G2, G3, and G4 as needed
+
+-   Copied in notes about the LFC comparisons from `code_for_Gen_comparisons.txt` into `Homework 2.Rmd`
+
+-   Tried to make the graph to compare LFC of G1 and G2, but can't get the colors to work

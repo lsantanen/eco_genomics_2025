@@ -295,7 +295,7 @@ names(G1G2merged) = c("G1_LFC","G2_LFC")
 
 
 
-ggplot(G1G2merged, aes(x = G1_LFC, y = G2_LFC, col = G1_LFC)) +
+ggplot(G1G2merged, aes(x = G1_LFC, y = G2_LFC)) +
   theme_minimal(base_size = 10) +
   ggtitle("LFC DEGs G1 vs G2") +
   xlab("G1_LFC") +

@@ -273,3 +273,7 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 -   Copied in notes about the LFC comparisons from `code_for_Gen_comparisons.txt` into `Homework 2.Rmd`
 
 -   Tried to make the graph to compare LFC of G1 and G2, but can't get the colors to work
+
+    -   Never mind, I was confused about the presentation of the graph the graph will just have the points all in black
+
+-   Now need to change the code for the second analysis

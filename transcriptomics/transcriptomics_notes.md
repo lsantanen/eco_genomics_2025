@@ -295,3 +295,11 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
 -   Created a pdf where each graph is on its own page - emailed Steve to see if there was a way to fix this
 
     -   Because of where my home directory is set, the pdfs saved into `mydata` but I moved them into `mydocs`
+
+-   Had issue with commit having a file that was too large, for future issues this is how to fix it
+
+    -   Go to terminal and cd into the directory that the files were in
+
+    -   execute `git reset HEAD~` and last commit will be undone
+
+-   Combined the plots for LFC graphs, but still having issues with the GO enrichment ones - the output is a pdf where every graph is on its own page

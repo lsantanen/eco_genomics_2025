@@ -277,3 +277,21 @@ in the terminal to create a txt file in `myresults\` to see the mapping rates
     -   Never mind, I was confused about the presentation of the graph the graph will just have the points all in black
 
 -   Now need to change the code for the second analysis
+
+#### 11/5/2025
+
+-   Graphed the LFC of G2 vs G1 (reverse of what was done above)
+
+-   Have to create figures
+
+    -   Figure 1: GO Enrichment Plots
+
+    -   Figure 2: REVIGO Results Scatter Plots
+
+    -   Figure 3: LFC Graphs
+
+-   Look back at code from HW1 to see how to best combine graphs into nice figures
+
+-   Created a pdf where each graph is on its own page - emailed Steve to see if there was a way to fix this
+
+    -   Because of where my home directory is set, the pdfs saved into `mydata` but I moved them into `mydocs`

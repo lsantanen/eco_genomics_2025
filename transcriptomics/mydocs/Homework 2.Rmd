@@ -710,7 +710,7 @@ write.table(sigRes, file = "/users/l/s/lsantane/projects/eco_genomics_2025/trans
 Create pdfs for the plots we need from this doc
 
 ```{r}
-pdf("GO_Enrichment_AllGen.pdf",width=100,height=100)
+pdf("GO_Enrichment_AllGen.pdf",width=10,height=10)
 par(mfrow=c(2,2))
 
 #G1

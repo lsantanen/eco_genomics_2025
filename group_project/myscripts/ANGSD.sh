@@ -8,11 +8,13 @@ module load gcc angsd
 
 ### Set up directories and variables
 
-mkdir /gpfs1/cl/ecogen/pbio6800/GroupProjects/spruceAgogo/RDA/ANGSD
+#commenting this out because the folder has already been made
+#running for a second time
+#mkdir /gpfs1/cl/ecogen/pbio6800/GroupProjects/spruceAgogo/RDA/ANGSD
 
 INPUT="/gpfs1/cl/ecogen/pbio6800/PopulationGenomics/bams"
 
-OUT="/gpfs1/cl/ecogen/pbio6800/GroupProjects/spruceAgogo/RDA"
+OUT="/gpfs1/cl/ecogen/pbio6800/GroupProjects/spruceAgogo/RDA/ANGSD"
 
 REF="/gpfs1/cl/ecogen/pbio6800/PopulationGenomics/ref_genome/Pmariana/Pmariana1.0-genome_reduced.fa"
 
@@ -55,16 +57,21 @@ angsd -b ${OUT}/ANGSD_for_RDA_bam.list \
 -GL 2 \
 -doSaf 1 \
 -doCounts 1 \
-#increase minInd to 6 (values between 5-8 for large datasets)
 -minInd 6 \
-#increase setMinDepthInd to 5 for a more stringent filter
 -setMinDepthInd 5 \
 -setMaxDepthInd 40 \
 -setMinDepth 10 \
 -skipTriallelic 1 \
 -doMajorMinor 4 \
-##### below filters require `doMaf`
 -doMaf 1 \
 -SNP_pval 1e-6 \
 -minMaf 0.01 \
--doGeno 1
+-doGeno 2 \
+-doPost 1
+
+
+#increase minInd to 6 (values between 5-8 for large datasets)
+#increase setMinDepthInd to 5 for a more stringent filter
+
+# last 4 lines require `doMaf`
+#changed doGeno to 2 and added doPost

@@ -4,7 +4,7 @@
 #---------  Slurm preamble, defines the job with #SBATCH statements
 
 # Give your job a name that's meaningful to you, but keep it short
-#SBATCH --job-name=ANGSD_pops
+#SBATCH --job-name=ANGSD_pops_rerun2
 
 # Name the output file: Re-direct the log file to your home directory
 # The first part of the name (%x) will be whatever you name your job 

@@ -31,3 +31,15 @@
     -   `ANGSD.sh` and `ANGSD_pops.sh` are both saved under `~/projects/eco_genomics_2025/group_project/myscripts`
 
     -   Gave `sbatch` a run time of 48 hours just to ensure it would have enough time
+
+### 11/18/2025: Open Lab Day
+
+-   Deleted files from RDA directory that were from failed ANGSD run
+
+-   All correct files are in `spruceAgogo/RDA/ANGSD`
+
+-   Research how to do redundancy analysis (RDA)
+
+-   Read through RDA tutorial from Capblancq
+
+    -   Process will be very similar to what we need to do, but will need to make some adjustments to properly fit our data (ANGSD output)
